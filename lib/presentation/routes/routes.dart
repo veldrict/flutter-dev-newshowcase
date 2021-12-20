@@ -11,7 +11,12 @@ abstract class Routes {
 
   static const String productsCategories = 'categories';
   static const String category = ':categoryId';
+
+  static const String wishList = 'wishlist';
+
   static const String profile = 'profile';
+  static const String newProfile = '/newProfile';
+  static const String editProfile = 'editProfile';
   static const String cart = '/cart';
   static const String cartDetail = ':cardId';
 }

@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dev_newshowcase/presentation/routes/app_routes.gr.dart';
+import 'package:flutter_dev_newshowcase/presentation/routes/app_routes.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class LandingPage extends StatelessWidget {
@@ -27,7 +27,7 @@ class LandingPage extends StatelessWidget {
           ],
         );
       },
-      routes: const [ProductsRouter(), ProfileRouter()],
+      routes: const [ProductsRouter(), WishListRouter(), ProfileRouter()],
       bottomNavigationBuilder: (_, tabsRouter) {
         return SalomonBottomBar(
             margin: const EdgeInsets.symmetric(
@@ -38,7 +38,7 @@ class LandingPage extends StatelessWidget {
             onTap: tabsRouter.setActiveIndex,
             items: [
               SalomonBottomBarItem(
-                selectedColor: Colors.redAccent,
+                selectedColor: Colors.green.shade400,
                 icon: const Icon(
                   Icons.home_outlined,
                   size: 30,
@@ -46,7 +46,15 @@ class LandingPage extends StatelessWidget {
                 title: const Text('Home'),
               ),
               SalomonBottomBarItem(
-                selectedColor: Colors.blue.shade200,
+                selectedColor: Colors.pink.shade200,
+                icon: const Icon(
+                  Icons.favorite_outline,
+                  size: 30,
+                ),
+                title: const Text('Wishlist'),
+              ),
+              SalomonBottomBarItem(
+                selectedColor: Colors.blueAccent,
                 icon: const Icon(
                   Icons.person_outline,
                   size: 30,

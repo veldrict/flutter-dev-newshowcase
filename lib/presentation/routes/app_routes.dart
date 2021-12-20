@@ -1,13 +1,10 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter_dev_newshowcase/presentation/auth/login/login_page.dart';
-import 'package:flutter_dev_newshowcase/presentation/auth/register/register_page.dart';
-import 'package:flutter_dev_newshowcase/presentation/landing/cart/cart_page.dart';
-import 'package:flutter_dev_newshowcase/presentation/landing/landing_page.dart';
-import 'package:flutter_dev_newshowcase/presentation/landing/products/detail/products_detail_page.dart';
-import 'package:flutter_dev_newshowcase/presentation/landing/products/products_page.dart';
-import 'package:flutter_dev_newshowcase/presentation/landing/profile/profile_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_dev_newshowcase/presentation/core/wrapper/profile/profile_wrapper_page.dart';
 import 'package:flutter_dev_newshowcase/presentation/routes/routes.dart';
-import 'package:flutter_dev_newshowcase/presentation/splash/splash_page.dart';
+import 'package:flutter_dev_newshowcase/presentation/views.dart';
+
+part 'app_routes.gr.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
@@ -48,9 +45,25 @@ import 'package:flutter_dev_newshowcase/presentation/splash/splash_page.dart';
               ),
             ]),
         AutoRoute(
+          name: 'WishListRouter',
+          path: Routes.wishList,
+          page: WishlistPage,
+        ),
+        AutoRoute(
           name: 'ProfileRouter',
           path: Routes.profile,
-          page: ProfilePage,
+          page: ProfileWrapperPage,
+          children: [
+            AutoRoute(
+              path: '',
+              page: ProfilePage,
+            ),
+            AutoRoute(
+              name: 'EditProfileRouter',
+              path: Routes.editProfile,
+              page: EditProfilePage,
+            ),
+          ],
         ),
       ],
     ),
@@ -58,7 +71,7 @@ import 'package:flutter_dev_newshowcase/presentation/splash/splash_page.dart';
       name: 'CartRouter',
       path: Routes.cart,
       page: CartPage,
-    ),
+    )
   ],
 )
-class $AppRoute {}
+class AppRoute extends _$AppRoute {}

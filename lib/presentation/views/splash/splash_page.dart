@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dev_newshowcase/application/auth/auth_bloc.dart';
 import 'package:flutter_dev_newshowcase/injection.dart';
-import 'package:flutter_dev_newshowcase/presentation/splash/widgets/splash_screen.dart';
+import 'package:flutter_dev_newshowcase/presentation/views/splash/widgets/splash_screen.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);

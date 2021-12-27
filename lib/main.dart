@@ -1,7 +1,4 @@
-import 'dart:async';
-
-import 'package:bloc/bloc.dart';
-import 'package:code_id_flutter/code_services/code_services.dart';
+import 'package:code_id_storage/code_id_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dev_newshowcase/application/cart/cart_bloc.dart';

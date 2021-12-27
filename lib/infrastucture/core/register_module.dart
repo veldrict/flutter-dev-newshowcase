@@ -1,27 +1,15 @@
-import 'package:code_id_flutter/code_id_flutter.dart';
-
+import 'package:code_id_network/code_id_network.dart';
+import 'package:code_id_storage/code_id_storage.dart';
 import 'package:injectable/injectable.dart';
 
 @module
 abstract class RegisterModule {
-  @Named('baseUrlA')
+  @Named('baseUrl')
   String get baseUrlA => 'https://fakestoreapi.com';
 
-  @Named('baseUrlB')
-  String get baseUrlB => 'http://api.fakeshop-api.com';
-
-  @Named('networkA')
   @preResolve
-  Future<INetworkService> networkA({
-    @Named('baseUrlA') required String baseUrl,
-  }) async {
-    return _setupNetwork(baseUrl);
-  }
-
-  @Named('networkB')
-  @preResolve
-  Future<INetworkService> networkB({
-    @Named('baseUrlB') required String baseUrl,
+  Future<INetworkService> network({
+    @Named('baseUrl') required String baseUrl,
   }) async {
     return _setupNetwork(baseUrl);
   }
@@ -32,7 +20,16 @@ abstract class RegisterModule {
     final _client = NetworkService(baseUrl: baseUrl);
 
     _client.addInterceptors([
-      AuthInterceptor(storage: storage, authKey: 'token'),
+      AuthInterceptor(
+        storage: storage,
+        authKey: 'token',
+        authHeadersBuilder: (token) {
+          if (token != null) {
+            return {'token': token};
+          }
+          return null;
+        },
+      ),
     ]);
     return _client;
   }

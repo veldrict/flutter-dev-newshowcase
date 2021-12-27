@@ -1,4 +1,4 @@
-import 'package:code_id_flutter/code_services/code_services.dart';
+import 'package:code_id_storage/code_id_storage.dart';
 import 'package:flutter_dev_newshowcase/domain/auth/i_auth_repository.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
@@ -18,5 +18,11 @@ class AuthRepository implements IAuthRepository {
     } catch (e) {
       return left(unit);
     }
+  }
+
+  @override
+  Future<void> close() {
+    // TODO: implement close
+    throw UnimplementedError();
   }
 }

@@ -14,12 +14,8 @@ class SplashScreen extends StatelessWidget {
       listener: (context, state) {
         state.maybeWhen(
           orElse: () => null,
-          eitherAuthOrNot: (either) {
-            either.match(
-              (l) => context.replaceRoute(const LoginRouter()),
-              (r) => context.replaceRoute(const LandingRouter()),
-            );
-          },
+          unauthenticated: () => context.replaceRoute(const LoginRouter()),
+          authenticated: () => context.replaceRoute(const LandingRouter()),
         );
       },
       child: const Center(

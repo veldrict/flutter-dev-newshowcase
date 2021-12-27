@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dev_newshowcase/presentation/core/wrapper/profile/profile_wrapper_page.dart';
 import 'package:flutter_dev_newshowcase/presentation/routes/routes.dart';
-import 'package:flutter_dev_newshowcase/presentation/views.dart';
+import 'package:flutter_dev_newshowcase/presentation/pages.dart';
 
 part 'app_routes.gr.dart';
 

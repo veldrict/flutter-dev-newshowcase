@@ -15,15 +15,19 @@ part 'auth_bloc.freezed.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthRepository _repo;
 
-  AuthBloc(this._repo) : super(const _Initial()) {
+  AuthBloc(this._repo) : super(const AuthState.initial()) {
     on<AuthEvent>((event, emit) async {
       await event.when(
         started: () async {
           await Future.delayed(const Duration(seconds: 3));
           final resp = await _repo.checkAuth();
+
           // emit()
           emit(
-            AuthState.eitherAuthOrNot(either: resp),
+            resp.fold(
+              (l) => const AuthState.unauthenticated(),
+              (r) => const AuthState.authenticated(),
+            ),
           );
         },
       );

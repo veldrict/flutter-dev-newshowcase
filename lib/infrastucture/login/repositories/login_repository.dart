@@ -1,7 +1,5 @@
-import 'dart:html';
-
-import 'package:code_id_flutter/code_id_flutter.dart';
-
+import 'package:code_id_network/code_id_network.dart';
+import 'package:code_id_storage/code_id_storage.dart';
 import 'package:flutter_dev_newshowcase/domain/login/i_login_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
@@ -32,7 +30,7 @@ class LoginRepository implements ILoginRepository {
         (l) => left(unit),
         (r) {
           Map<String, dynamic> json = r as Map<String, dynamic>;
-          storage.putDanum(key: 'token', value: json['token']);
+          storage.putDatum(key: 'token', value: json['token']);
           return right(unit);
         },
       );

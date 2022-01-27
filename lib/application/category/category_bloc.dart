@@ -6,7 +6,7 @@ part 'category_state.dart';
 part 'category_bloc.freezed.dart';
 
 class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
-  CategoryBloc() : super(_Initial()) {
+  CategoryBloc() : super(const _Initial()) {
     on<CategoryEvent>((event, emit) {
       // TODO: implement event handler
     });

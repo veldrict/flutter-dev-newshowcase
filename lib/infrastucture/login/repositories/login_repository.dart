@@ -1,5 +1,6 @@
 import 'package:code_id_network/code_id_network.dart';
 import 'package:code_id_storage/code_id_storage.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_dev_newshowcase/domain/login/i_login_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
@@ -27,7 +28,14 @@ class LoginRepository implements ILoginRepository {
       );
 
       return resp.fold(
-        (l) => left(unit),
+        (l) => l.when(
+            noInternet: () => left(unit),
+            serverError: (e) => left(unit),
+            timeout: () => left(unit),
+            other: (e) {
+              debugPrint(e.toString());
+              return left(unit);
+            }),
         (r) {
           Map<String, dynamic> json = r as Map<String, dynamic>;
           storage.putDatum(key: 'token', value: json['token']);

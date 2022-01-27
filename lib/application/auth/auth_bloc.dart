@@ -1,9 +1,8 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter_dev_newshowcase/domain/auth/i_auth_repository.dart';
-import 'package:fpdart/fpdart.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -32,5 +31,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         },
       );
     });
+  }
+
+  @override
+  Future<void> close() async {
+    await _repo.close();
+    return super.close();
   }
 }

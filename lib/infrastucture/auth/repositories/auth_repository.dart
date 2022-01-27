@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IAuthRepository)
 class AuthRepository implements IAuthRepository {
-  const AuthRepository();
+  AuthRepository();
   @override
   Future<Either<Unit, Unit>> checkAuth() async {
     try {
@@ -21,8 +21,7 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<void> close() {
-    // TODO: implement close
-    throw UnimplementedError();
+  Future<void> close() async {
+    await Storage.close();
   }
 }

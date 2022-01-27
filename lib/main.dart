@@ -15,8 +15,8 @@ void main() async {
   await configureInjection(Environment.dev);
   // runApp(const MyApp());
   // await runZoned(() async { const MyApp()});
-  await BlocOverrides.runZoned(
-    () async {
+  BlocOverrides.runZoned(
+    () {
       runApp(
         BlocProvider<CartBloc>(
           create: (context) => getIt<CartBloc>(),

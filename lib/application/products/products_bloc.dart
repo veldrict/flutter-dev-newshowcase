@@ -6,7 +6,7 @@ part 'products_state.dart';
 part 'products_bloc.freezed.dart';
 
 class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
-  ProductsBloc() : super(_Initial()) {
+  ProductsBloc() : super(const _Initial()) {
     on<ProductsEvent>((event, emit) {
       // TODO: implement event handler
     });

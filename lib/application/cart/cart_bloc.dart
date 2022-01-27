@@ -8,7 +8,7 @@ part 'cart_bloc.freezed.dart';
 
 @injectable
 class CartBloc extends Bloc<CartEvent, CartState> {
-  CartBloc() : super(_Initial()) {
+  CartBloc() : super(const _Initial()) {
     on<CartEvent>((event, emit) async {
       await event.when(
         started: () async {},

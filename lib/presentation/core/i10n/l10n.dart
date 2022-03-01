@@ -50,6 +50,16 @@ class I10n {
     return Localizations.of<I10n>(context, I10n);
   }
 
+  /// `Feed`
+  String get feed {
+    return Intl.message(
+      'Feed',
+      name: 'feed',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Home`
   String get home {
     return Intl.message(
@@ -60,11 +70,41 @@ class I10n {
     );
   }
 
-  /// `profile`
+  /// `Official Store`
+  String get officialStore {
+    return Intl.message(
+      'Official Store',
+      name: 'officialStore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
   String get profile {
     return Intl.message(
-      'profile',
+      'Profile',
       name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send to {house}`
+  String sendTo(Object house) {
+    return Intl.message(
+      'Send to $house',
+      name: 'sendTo',
+      desc: '',
+      args: [house],
+    );
+  }
+
+  /// `Transaction`
+  String get transaction {
+    return Intl.message(
+      'Transaction',
+      name: 'transaction',
       desc: '',
       args: [],
     );

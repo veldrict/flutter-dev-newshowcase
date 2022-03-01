@@ -24,7 +24,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           // emit()
           emit(
             resp.fold(
-              (l) => const AuthState.unauthenticated(),
+              (l) => const AuthState.authenticated(),
               (r) => const AuthState.authenticated(),
             ),
           );

@@ -1,5 +1,10 @@
 {
+    "feed":"Feed",
     "home": "Home",
-    "profile": "profile",
+    "officialStore": "Official Store",
+    "profile": "Profile",
+    "sendTo": "Send to {house}",
+    "transaction":"Transaction",
     "wishlist": "Wishlist"
+
 }

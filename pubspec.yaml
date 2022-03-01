@@ -27,18 +27,17 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  auto_route: ^3.2.1
-  bloc: ^8.0.2
-  code_id_flutter: ^0.1.1
-  code_id_network: ^0.0.2
-  code_id_storage: ^0.0.2
+  auto_route: ^3.2.4
+  bloc: ^8.0.3
+  code_id_flutter: ^0.1.2
+  code_id_network: ^0.0.4
+  code_id_storage: ^0.0.3
   cupertino_icons: ^1.0.2
-  dio: ^4.0.4
-  fast_immutable_collections: ^7.1.2
+  fast_immutable_collections: ^7.2.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
-  flutter_hooks: ^0.18.2
+  flutter_hooks: ^0.18.2+1
   flutter_localizations:
     sdk: flutter
   fpdart: ^0.0.12
@@ -49,7 +48,7 @@ dependencies:
   salomon_bottom_bar: ^3.2.0
 
 dev_dependencies:
-  auto_route_generator: ^3.2.1
+  auto_route_generator: ^3.2.3
   bloc_test: ^9.0.2
   build_runner: ^2.1.7
   flutter_lints: ^1.0.0

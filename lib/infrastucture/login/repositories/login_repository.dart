@@ -1,4 +1,5 @@
 import 'package:code_id_network/code_id_network.dart';
+
 import 'package:code_id_storage/code_id_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dev_newshowcase/domain/login/i_login_repository.dart';
@@ -19,11 +20,12 @@ class LoginRepository implements ILoginRepository {
     try {
       IStorage storage = Storage;
       await storage.openBox('auth');
+
       var resp = await _networkService.postHttp(
         path: '/login',
         content: {
           'username': username,
-          password: password,
+          'password': password,
         },
       );
 

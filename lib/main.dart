@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:code_id_storage/code_id_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +13,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:injectable/injectable.dart';
 
 void main() async {
+  // var path = Directory.current.path;
   await Storage.init();
   await configureInjection(Environment.dev);
   // runApp(const MyApp());

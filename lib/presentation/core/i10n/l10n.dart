@@ -119,6 +119,16 @@ class I10n {
       args: [],
     );
   }
+
+  /// `Welcome {user},`
+  String welcome(Object user) {
+    return Intl.message(
+      'Welcome $user,',
+      name: 'welcome',
+      desc: '',
+      args: [user],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I10n> {

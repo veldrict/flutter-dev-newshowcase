@@ -16,6 +16,11 @@ class LandingPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           bottomOpacity: 0.0,
           elevation: 0.0,
+          title: Text(
+            i10n.welcome('Adit'),
+            style: const TextStyle(color: Colors.black),
+          ),
+          centerTitle: false,
           actions: [
             IconButton(
               onPressed: () {
@@ -52,7 +57,10 @@ class LandingPage extends StatelessWidget {
                   Icons.home,
                   // size: 20,
                 ),
-                title: Text(i10n.home),
+                title: Text(
+                  i10n.home,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
               SalomonBottomBarItem(
                 selectedColor: Colors.blueAccent,
@@ -60,7 +68,10 @@ class LandingPage extends StatelessWidget {
                   Icons.feed,
                   // size: 20,
                 ),
-                title: Text(i10n.feed),
+                title: Text(
+                  i10n.feed,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
               SalomonBottomBarItem(
                 selectedColor: Colors.purple.shade400,
@@ -68,7 +79,10 @@ class LandingPage extends StatelessWidget {
                   Icons.store,
                   // size: 20,
                 ),
-                title: Text(i10n.officialStore),
+                title: Text(
+                  i10n.officialStore,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
               SalomonBottomBarItem(
                 selectedColor: Colors.blueAccent,
@@ -76,7 +90,10 @@ class LandingPage extends StatelessWidget {
                   Icons.favorite,
                   // size: 20,
                 ),
-                title: Text(i10n.wishlist),
+                title: Text(
+                  i10n.wishlist,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
               SalomonBottomBarItem(
                 selectedColor: Colors.blueAccent,
@@ -86,6 +103,7 @@ class LandingPage extends StatelessWidget {
                 ),
                 title: Text(
                   i10n.transaction,
+                  overflow: TextOverflow.ellipsis,
                   // softWrap: true,
                 ),
               ),

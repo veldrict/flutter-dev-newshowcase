@@ -5,6 +5,7 @@
     "profile": "Profile",
     "sendTo": "Send to {house}",
     "transaction":"Transaction",
-    "wishlist": "Wishlist"
+    "wishlist": "Wishlist",
+    "welcome":"Welcome {user},"
 
 }

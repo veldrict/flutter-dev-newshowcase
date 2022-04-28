@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(house) => "Send to ${house}";
 
+  static String m1(user) => "Welcome ${user},";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "feed": MessageLookupByLibrary.simpleMessage("Feed"),
@@ -30,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "sendTo": m0,
         "transaction": MessageLookupByLibrary.simpleMessage("Transaction"),
+        "welcome": m1,
         "wishlist": MessageLookupByLibrary.simpleMessage("Wishlist")
       };
 }

@@ -30,6 +30,13 @@ class LoginPassword extends ValueObject<ValueFailure<String>, String> {
   const LoginPassword._(this.value);
 
   factory LoginPassword(String input) {
+    if (input == '') {
+      return LoginPassword._(
+        left(
+          ValueFailure.empty(failedValue: input),
+        ),
+      );
+    }
     if (CommonUtils.validatePassword(input)) {
       return LoginPassword._(right(input));
     }
